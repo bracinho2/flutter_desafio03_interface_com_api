@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Hello World',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -47,8 +47,34 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                onChanged: (value) {
+                  print(value);
+                },
+                decoration: const InputDecoration(
+                  label: Text('Nome'),
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                onChanged: (value) {
+                  print(value);
+                },
+              ),
+            ),
+            Container(
+              color: Colors.amber,
+              height: 100,
+              width: 100,
+            ),
+            ElevatedButton(onPressed: () {}, child: Text('MEU BOTAO')),
             const Text(
-              'You have pushed the button this many times:',
+              'Clicamos X vezes na aula IFPR',
             ),
             Text(
               '$_counter',
