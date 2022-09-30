@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_desafio03_interface_com_api/app/features/forecast/domain/entity/entity_model.dart';
 import 'package:flutter_desafio03_interface_com_api/app/features/forecast/domain/errors/errors.dart';
 import 'package:flutter_desafio03_interface_com_api/app/features/forecast/domain/repository/forecast_repository.dart';
@@ -18,7 +17,7 @@ class ForecastRepositoryImpl implements ForecastRepository {
       final forecast = ActualForecastMapper.fromMap(response);
       return forecast;
     } on DatasourceError catch (e) {
-      throw RepositoryError(message: 'Repository Error');
+      throw RepositoryError(message: 'Repository Error' + e.toString());
     }
   }
 }

@@ -15,8 +15,8 @@ class ForecastDatasourceImpl implements ForecastDatasource {
       final path = '${URLs.FORECAST_BASE_URL}$value';
       final response = await _httpClient.fetch(path: path);
       return response;
-    } on HttpClientError catch (error) {
-      throw DatasourceError(message: 'Erro de Datasource');
+    } on HttpClientError catch (e) {
+      throw DatasourceError(message: 'Erro de Datasource' + e.toString());
     }
   }
 }
