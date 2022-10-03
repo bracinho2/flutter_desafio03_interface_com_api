@@ -1,0 +1,10 @@
+name: flutter_desafio03_interface_com_api
+
+packages:
+  - cambona/**
+  - peabiru/**
+  - '*'
+
+  scripts:
+    analyze:
+      exec: dart analyze .
