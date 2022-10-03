@@ -5,6 +5,5 @@ packages:
   - peabiru/**
   - '*'
 
-  scripts:
-    analyze:
-      exec: dart analyze .
+scripts:
+  hello: echo 'Hello World Melos =)'

@@ -11,7 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  melos: ^2.7.1
 
   cupertino_icons: ^1.0.2
 
