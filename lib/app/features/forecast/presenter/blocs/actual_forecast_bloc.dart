@@ -9,9 +9,17 @@ class ActualForecastBloc
     this._getForecast,
   ) : super(EmptyActualForecast()) {
     on<FetchActualForecastEvent>(_fetchActualForecast);
+    on<EmptyActualForecastEvent>(_emptyActualForecast);
   }
 
   final GetForecast _getForecast;
+
+  Future<void> _emptyActualForecast(
+    EmptyActualForecastEvent event,
+    Emitter<IActualForecastState> emit,
+  ) async {
+    emit(EmptyActualForecast());
+  }
 
   Future<void> _fetchActualForecast(
     FetchActualForecastEvent event,

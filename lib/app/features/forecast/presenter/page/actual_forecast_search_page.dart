@@ -36,6 +36,71 @@ class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
               child: Text('Ooops!'),
             );
           }
+          if (state is EmptyActualForecast) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: searchController,
+                        style: const TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                        ),
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            bottom: 10,
+                            top: 30,
+                          ),
+                          isDense: true,
+                          labelText: 'Ciudad',
+                          labelStyle: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.green,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40.0,
+                      ),
+                      ElevatedButton(
+                        style: lightTheme.elevatedButtonTheme.style,
+                        onPressed: () {
+                          if (searchController.text.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content:
+                                    Text('Necessitamos el nombre de la ciudad'),
+                              ),
+                            );
+                            return;
+                          }
+
+                          widget.bloc.add(
+                            FetchActualForecastEvent(
+                              city: searchController.text,
+                            ),
+                          );
+                          searchController.clear();
+                        },
+                        child: const Text('Buscar'),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
           if (state is SucessActualForecast) {
             return Align(
               alignment: Alignment.center,

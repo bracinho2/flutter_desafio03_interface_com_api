@@ -15,9 +15,9 @@ class UnoForecastImplementation implements HttpClient {
   @override
   Future<Map<String, dynamic>> fetch({required String path}) async {
     try {
-      // final response = await _uno.get(path);
+      //final response = await _uno.get(path);
 
-      // final value = response.data;
+      //final value = response.data;
 
       final values = {
         "temperature": "+23 °C",
