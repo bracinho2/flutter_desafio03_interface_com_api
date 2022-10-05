@@ -20,7 +20,7 @@ class ActualForecastModule extends Module {
       (i) => ForecastRepositoryImpl(i()),
     ),
 
-    //repository
+    //usecase
     Bind.lazySingleton<GetForecast>(
       (i) => GetForecastImpl(i()),
     ),

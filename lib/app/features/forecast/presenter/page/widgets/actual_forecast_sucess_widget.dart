@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cambona/themes/themes.dart';
 import 'package:cambona/widgets/custom_elevated_button.dart';
 import 'package:cambona/widgets/custom_text_field.dart';
@@ -8,10 +9,12 @@ import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presen
 class ActualForecastSucessWidget extends StatelessWidget {
   final SucessActualForecast state;
   final void Function()? onPressed;
+  final Widget city;
   const ActualForecastSucessWidget({
     Key? key,
     required this.state,
     this.onPressed,
+    required this.city,
   }) : super(key: key);
 
   @override
@@ -21,6 +24,7 @@ class ActualForecastSucessWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          city,
           CustomTextField(
             text: state.forecast.temperature,
             style: lightTheme.textTheme.labelLarge,

@@ -8,7 +8,7 @@ class CoreModule extends Module {
       (i) => Uno(),
       export: true,
     ),
-    Bind.factory<HttpClient>(
+    Bind.singleton<HttpClient>(
       (i) => UnoForecastImplementation(i()),
       export: true,
     ),

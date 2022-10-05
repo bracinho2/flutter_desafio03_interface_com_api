@@ -1,3 +1,4 @@
+import 'package:cambona/cambona.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/bloc/actual_forecast_bloc.dart';
 import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/events/actual_forecast_events.dart';
@@ -53,12 +54,15 @@ class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
                     city: searchController.text,
                   ),
                 );
-                searchController.clear();
               },
             );
           }
           if (state is SucessActualForecast) {
             return ActualForecastSucessWidget(
+              city: Text(
+                searchController.text.toUpperCase(),
+                style: lightTheme.textTheme.titleLarge,
+              ),
               state: state,
               onPressed: () {
                 widget.bloc.add(SearchActualForecastEvent());
