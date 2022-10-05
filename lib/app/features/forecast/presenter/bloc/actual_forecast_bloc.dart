@@ -7,32 +7,32 @@ class ActualForecastBloc
     extends Bloc<IActualForecastEvent, IActualForecastState> {
   ActualForecastBloc(
     this._getForecast,
-  ) : super(EmptyActualForecast()) {
+  ) : super(SearchActualForecastState()) {
     on<FetchActualForecastEvent>(_fetchActualForecast);
-    on<EmptyActualForecastEvent>(_emptyActualForecast);
+    on<SearchActualForecastEvent>(_searchActualForecast);
   }
 
   final GetForecast _getForecast;
 
-  Future<void> _emptyActualForecast(
-    EmptyActualForecastEvent event,
+  Future<void> _searchActualForecast(
+    SearchActualForecastEvent event,
     Emitter<IActualForecastState> emit,
   ) async {
-    emit(EmptyActualForecast());
+    emit(SearchActualForecastState());
   }
 
   Future<void> _fetchActualForecast(
     FetchActualForecastEvent event,
     Emitter<IActualForecastState> emit,
   ) async {
-    emit(LoadingActualForecast());
+    emit(LoadingActualForecastState());
     try {
       final actualForecast = await _getForecast.call(
         value: event.city,
       );
       emit(SucessActualForecast(actualForecast));
     } catch (e) {
-      emit(ErrorActualForecast(e.toString()));
+      emit(ErrorActualForecastState(e.toString()));
     }
   }
 }

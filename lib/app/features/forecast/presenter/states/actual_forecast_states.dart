@@ -4,13 +4,13 @@ abstract class IActualForecastState {
   const IActualForecastState();
 }
 
-class EmptyActualForecast extends IActualForecastState {}
+class SearchActualForecastState extends IActualForecastState {}
 
-class LoadingActualForecast extends IActualForecastState {}
+class LoadingActualForecastState extends IActualForecastState {}
 
-class ErrorActualForecast extends IActualForecastState {
+class ErrorActualForecastState extends IActualForecastState {
   final String message;
-  const ErrorActualForecast(this.message);
+  const ErrorActualForecastState(this.message);
 }
 
 class SucessActualForecast extends IActualForecastState {

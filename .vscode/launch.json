@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_desafio03_interface_com_api",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_desafio03_interface_com_api (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_desafio03_interface_com_api (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "cambona",
+            "cwd": "cambona",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cambona (profile mode)",
+            "cwd": "cambona",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "cambona (release mode)",
+            "cwd": "cambona",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "peabiru",
+            "cwd": "peabiru",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "peabiru (profile mode)",
+            "cwd": "peabiru",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "peabiru (release mode)",
+            "cwd": "peabiru",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

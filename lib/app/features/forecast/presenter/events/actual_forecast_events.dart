@@ -8,4 +8,4 @@ class FetchActualForecastEvent extends IActualForecastEvent {
   });
 }
 
-class EmptyActualForecastEvent extends IActualForecastEvent {}
+class SearchActualForecastEvent extends IActualForecastEvent {}

@@ -28,29 +28,35 @@ final lightTheme = ThemeData(
 
   //TEXTOS
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 40,
-      fontWeight: FontWeight.w900,
-      color: primaryColor,
-    ),
-    labelLarge: TextStyle(
-      fontFamily: 'Roboto',
-      fontSize: 20,
-      color: Colors.black26,
-    ),
     titleLarge: TextStyle(
-      fontFamily: 'Roboto',
-      fontSize: 30,
+      fontSize: 80,
       fontWeight: FontWeight.bold,
+      color: Colors.black,
     ),
     titleMedium: TextStyle(
-      fontFamily: 'Roboto',
-      fontSize: 20,
-    ),
-    titleSmall: TextStyle(
-      fontFamily: 'Roboto',
-      fontSize: 17,
+      fontSize: 100,
       fontWeight: FontWeight.bold,
+      color: Colors.green,
+    ),
+    labelSmall: TextStyle(
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.bold,
+    ),
+    labelMedium: TextStyle(
+        fontSize: 50,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Montserrat',
+        color: Colors.green),
+    labelLarge: TextStyle(
+      fontSize: 80,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Montserrat',
+    ),
+    headlineSmall: TextStyle(
+      fontFamily: 'ROBOTO',
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
     ),
   ),
 

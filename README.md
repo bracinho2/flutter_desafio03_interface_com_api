@@ -23,6 +23,8 @@ Um dos assuntos mais badalados no mundo do Flutter é a questão da Reatividade.
 
 Como funciona? Sempre que dispararmos um evento nós teremos a atualização do estado da tela, ou seja, cada estado pode definir um comportamento da tela. Nestes estados que são respostas a eventos podem carregar entidades ou lista de entidades e/ou comportamentos desejáveis de apresentação;
 
+Dica importante: atente-se para os métodos dentro da classe principal do Bloc: são eles que irão receber um evento e emitir um estado!
+
 ## Responsividade
 
 Requisitos:
@@ -33,6 +35,7 @@ Repository com datasource(interfaces)
 Teste de unidade das camadas e do bloc
 BLoC
 Uno(Wrapper igual do ImagePicker)
+
 Git/GitHub - (Conventional commits e Git Flow) 
 Browse thousands of Weather images for design inspiration | Dribbble
 Explore thousands of high-quality weather images on Dribbble. Your resource to get inspired, discover and connect with designers worldwide.

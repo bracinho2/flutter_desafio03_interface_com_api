@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 5)).then((value) {
+    Future.delayed(const Duration(seconds: 3)).then((value) {
       Modular.to.pushNamedAndRemoveUntil('/actualForecastPage/', (_) => false);
     });
   }
@@ -27,36 +27,22 @@ class _SplashPageState extends State<SplashPage> {
         alignment: Alignment.center,
         child: Stack(
           children: [
-            Container(
-              child: const Text(
-                'Hola',
-                style: TextStyle(
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat',
-                ),
-              ),
+            Text(
+              'Su',
+              style: theme.textTheme.titleLarge,
             ),
             Container(
-              padding: const EdgeInsets.fromLTRB(0.0, 80.0, 0.0, 0.0),
-              child: const Text(
-                'Que tal',
-                style: TextStyle(
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(250.0, 50.0, 0.0, 0.0),
-              child: const Text(
+              padding: const EdgeInsets.only(left: 87),
+              child: Text(
                 '\u00A1',
-                style: TextStyle(
-                  fontSize: 100,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
-                ),
+                style: theme.textTheme.titleMedium,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
+              child: Text(
+                'Prognostico',
+                style: theme.textTheme.titleLarge,
               ),
             ),
           ],
