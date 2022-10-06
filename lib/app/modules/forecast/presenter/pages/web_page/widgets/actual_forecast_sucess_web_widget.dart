@@ -23,63 +23,84 @@ class ActualForecastSucessWebWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          city,
-          CustomTextField(
-            text: state.forecast.temperature,
-            style: lightTheme.textTheme.labelLarge,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  city,
+                  CustomTextField(
+                    text: state.forecast.description,
+                    style: lightTheme.textTheme.labelMedium,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                width: 150,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomTextField(
+                    text: state.forecast.temperature,
+                    style: lightTheme.textTheme.displayLarge,
+                  ),
+                  CustomTextField(
+                    text: state.forecast.wind,
+                    style: lightTheme.textTheme.displayMedium,
+                  ),
+                ],
+              ),
+            ],
           ),
-          CustomTextField(
-            text: state.forecast.description,
-            style: lightTheme.textTheme.labelMedium,
-          ),
-          CustomTextField(
-            text: state.forecast.wind,
-            style: lightTheme.textTheme.labelLarge,
-          ),
-          SizedBox(
-            height: 80,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              clipBehavior: Clip.none,
-              shrinkWrap: true,
-              itemCount: state.forecast.futureForecast.length,
-              itemBuilder: ((context, index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Colors.green,
-                      ),
-                      width: 90,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '+ ' +
-                                state.forecast.futureForecast[index].day +
-                                ' Day',
-                            style: lightTheme.textTheme.headlineSmall,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 80,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  clipBehavior: Clip.none,
+                  shrinkWrap: true,
+                  itemCount: state.forecast.futureForecast.length,
+                  itemBuilder: ((context, index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.green,
                           ),
-                          Text(
-                            state.forecast.futureForecast[index].temperature,
-                            style: lightTheme.textTheme.headlineSmall,
+                          width: 90,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '+ ' +
+                                    state.forecast.futureForecast[index].day +
+                                    ' Day',
+                                style: lightTheme.textTheme.headlineSmall,
+                              ),
+                              Text(
+                                state
+                                    .forecast.futureForecast[index].temperature,
+                                style: lightTheme.textTheme.headlineSmall,
+                              ),
+                              Text(
+                                state.forecast.futureForecast[index].wind,
+                                style: lightTheme.textTheme.headlineSmall,
+                              ),
+                            ],
                           ),
-                          Text(
-                            state.forecast.futureForecast[index].wind,
-                            style: lightTheme.textTheme.headlineSmall,
-                          ),
-                        ],
-                      ),
-                    ),
-                  )),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          CustomElevatedButton(
-            onPressed: onPressed,
-            label: 'Volver',
+                        ),
+                      )),
+                ),
+              ),
+              CustomElevatedButton(
+                onPressed: onPressed,
+                label: 'Volver',
+              ),
+            ],
           ),
         ],
       ),

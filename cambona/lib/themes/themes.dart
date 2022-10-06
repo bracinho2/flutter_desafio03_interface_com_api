@@ -28,6 +28,18 @@ final lightTheme = ThemeData(
 
   //TEXTOS
   textTheme: const TextTheme(
+    displayLarge: TextStyle(
+      fontSize: 180,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Montserrat',
+      color: Colors.black,
+    ),
+    displayMedium: TextStyle(
+      fontSize: 100,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Montserrat',
+      color: Colors.black,
+    ),
     titleLarge: TextStyle(
       fontSize: 80,
       fontWeight: FontWeight.bold,
