@@ -27,6 +27,19 @@ Dica importante: atente-se para os métodos dentro da classe principal do Bloc: 
 
 ## Responsividade
 
+## Arquitetura Limpa
+O desafio solicitou construir uma pequena arquitetura com Repositorio(Repository) e Fonte de Dados (Datasource). No entanto, como nosso estudo prévio foi baseado na proposta de Arquitetura Limpa da Flutternado optamos em desenvolver este projeto com estas noções mais aproximadas para favorecer os testes das camadas, que deverão ser realizados.
+
+Recomendo o estudo da proposta da comunidade brasileira sobre arquitetura limpa para melhor entendimento. São noções muito importantes e que são utilizadas nas grandes empresas. 
+
+Link: https://github.com/Flutterando/Clean-Dart
+
+## Service
+Para o consumo de API necessitamos de um cliente HTTP. Podemos utilizar algumas das opções disponíveis no site de repositório pub.dev! No entanto, uma das estratégias para trabalharmos com um cliente de http que poderá ser facilmente substituído com baixo acoplamento e alta coesão é a utilização de um Service Pattern. Vale lembrar que o uso de uma classe abstrata como contrato é importante para poder também realizar uma possível mudança de clientes. Lembrem-se do Strategy Pattern!
+
+Outra dica importante é que um pacote deve ficar encapsulado e o retorno de dados deve ser um retorno de tipos conhecidos pelo programa, ou seja, o pacote com o cliente http fica encapsulado. Uma dica é pensar em uma estratégia de organizar uma interface (classe abstrata) que contenha a regra de negócio para consulta e, depois, realizar a implementação do pacote escolhido (neste desafio utilizaremos o Uno). Vale ressaltar que a ideia é que o cliente http passe para o datasource do projeto a resposta que ele conseguir da api. Atente-se para o retorno que pode ser um JSON, uma lista, um mapa, etc;
+
+
 Requisitos:
 Mobile e Desktop/Web
 Design a sua escolha - Responsividade, Adaptatividade, Design system(monorepo, usar o melos)

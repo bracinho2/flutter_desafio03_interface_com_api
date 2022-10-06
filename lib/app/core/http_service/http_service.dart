@@ -1,4 +1,4 @@
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/domain/errors/errors.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/errors/errors.dart';
 import 'package:peabiru/peabiru.dart';
 
 abstract class HttpClient {

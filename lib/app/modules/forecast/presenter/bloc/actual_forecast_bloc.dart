@@ -1,7 +1,7 @@
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/usecases/get_forecast.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/states/actual_forecast_states.dart';
 import 'package:peabiru/peabiru.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/domain/usecases/get_forecast.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/events/actual_forecast_events.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/states/actual_forecast_states.dart';
 
 class ActualForecastBloc
     extends Bloc<IActualForecastEvent, IActualForecastState> {

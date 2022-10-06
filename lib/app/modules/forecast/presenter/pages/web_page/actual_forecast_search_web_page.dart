@@ -1,27 +1,28 @@
 import 'package:cambona/cambona.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/bloc/actual_forecast_bloc.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/events/actual_forecast_events.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/page/widgets/actual_forecast_error_widget.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/page/widgets/actual_forecast_loading_widget.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/page/widgets/actual_forecast_search_widget.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/page/widgets/actual_forecast_sucess_widget.dart';
-import 'package:flutter_desafio03_interface_com_api/app/features/forecast/presenter/states/actual_forecast_states.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/actual_forecast_bloc.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/web_page/widgets/actual_forecast_error_web_widget.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/web_page/widgets/actual_forecast_loading_web_widget.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/web_page/widgets/actual_forecast_search_web_widget.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/web_page/widgets/actual_forecast_sucess_web_widget.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/states/actual_forecast_states.dart';
 import 'package:peabiru/peabiru.dart';
 
-class ActualForecastSearchPage extends StatefulWidget {
+class ActualForecastSearchWebPage extends StatefulWidget {
   final ActualForecastBloc bloc;
-  const ActualForecastSearchPage({
+  const ActualForecastSearchWebPage({
     Key? key,
     required this.bloc,
   }) : super(key: key);
 
   @override
-  State<ActualForecastSearchPage> createState() =>
-      _ActualForecastSearchPageState();
+  State<ActualForecastSearchWebPage> createState() =>
+      _ActualForecastSearchWebPageState();
 }
 
-class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
+class _ActualForecastSearchWebPageState
+    extends State<ActualForecastSearchWebPage> {
   final searchController = TextEditingController();
 
   @override
@@ -31,10 +32,10 @@ class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
         bloc: widget.bloc,
         builder: (context, state) {
           if (state is LoadingActualForecastState) {
-            return const ActualForecastLoadingWidget();
+            return const ActualForecastLoadingWebWidget();
           }
           if (state is SearchActualForecastState) {
-            return ActualForecastSearchWidget(
+            return ActualForecastSearchWebWidget(
               onChanged: (value) {
                 searchController.text = value;
               },
@@ -58,7 +59,7 @@ class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
             );
           }
           if (state is SucessActualForecast) {
-            return ActualForecastSucessWidget(
+            return ActualForecastSucessWebWidget(
               city: Text(
                 searchController.text.toUpperCase(),
                 style: lightTheme.textTheme.titleLarge,
@@ -70,7 +71,7 @@ class _ActualForecastSearchPageState extends State<ActualForecastSearchPage> {
             );
           }
           if (state is ErrorActualForecastState) {
-            return ActualForecastErrorWidget(
+            return ActualForecastErrorWebWidget(
               onPressed: () {
                 widget.bloc.add(SearchActualForecastEvent());
               },
