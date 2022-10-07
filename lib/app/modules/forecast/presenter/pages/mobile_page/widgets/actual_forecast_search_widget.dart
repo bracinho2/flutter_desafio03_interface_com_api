@@ -15,6 +15,7 @@ class ActualForecastSearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQueryData = MediaQuery.of(context);
+
     return Align(
       child: ConstrainedBox(
         constraints: const BoxConstraints(

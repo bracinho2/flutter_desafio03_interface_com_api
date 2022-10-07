@@ -12,8 +12,13 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: ((context, args) => const SplashPage())),
-    ChildRoute('/', child: ((context, args) => const SplashPage())),
-    ModuleRoute('/actualForecastPage/', module: ActualForecastModule()),
+    ChildRoute(
+      '/',
+      child: ((context, args) => const SplashPage()),
+    ),
+    ModuleRoute(
+      '/actualForecastPage/',
+      module: ActualForecastModule(),
+    ),
   ];
 }
