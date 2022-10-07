@@ -62,7 +62,7 @@ class _ActualForecastSearchMobilePageState
           if (state is SucessActualForecast) {
             return ActualForecastSucessWidget(
               city: Text(
-                searchController.text.toUpperCase(),
+                state.city!.toUpperCase(),
                 style: lightTheme.textTheme.titleLarge,
               ),
               state: state,

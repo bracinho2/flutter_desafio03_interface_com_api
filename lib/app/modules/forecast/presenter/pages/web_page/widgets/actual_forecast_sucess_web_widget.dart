@@ -36,8 +36,15 @@ class ActualForecastSucessWebWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
+                height: 100,
                 width: 150,
+                child: VerticalDivider(
+                  //indent: 10,
+                  endIndent: 20,
+                  thickness: 10,
+                  color: lightTheme.primaryColor,
+                ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +55,7 @@ class ActualForecastSucessWebWidget extends StatelessWidget {
                   ),
                   CustomTextField(
                     text: state.forecast.wind,
-                    style: lightTheme.textTheme.displayMedium,
+                    style: lightTheme.textTheme.labelMedium,
                   ),
                 ],
               ),

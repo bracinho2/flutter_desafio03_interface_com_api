@@ -1,5 +1,6 @@
 import 'package:cambona/cambona.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio03_interface_com_api/app/core/screen_inteligency/screen_inteligency.dart';
 
 class ActualForecastErrorWidget extends StatelessWidget {
   final void Function()? onPressed;
@@ -10,6 +11,7 @@ class ActualForecastErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -18,8 +20,8 @@ class ActualForecastErrorWidget extends StatelessWidget {
             'Ooops!',
             style: lightTheme.textTheme.titleLarge,
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: Responsivity.automatic(10, mediaQueryData),
           ),
           CustomElevatedButton(
             label: 'volver',

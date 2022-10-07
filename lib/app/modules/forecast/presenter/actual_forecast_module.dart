@@ -31,12 +31,6 @@ class ActualForecastModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    // ChildRoute(
-    //   '/',
-    //   child: ((context, args) => ActualForecastSearchMobilePage(
-    //         bloc: Modular.get<ActualForecastBloc>(),
-    //       )),
-    // ),
     ChildRoute(
       '/',
       child: ((context, args) => ActualForecastPage(

@@ -1,6 +1,7 @@
 import 'package:cambona/widgets/custom_elevated_button.dart';
 import 'package:cambona/widgets/custom_input_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio03_interface_com_api/app/core/screen_inteligency/screen_inteligency.dart';
 
 class ActualForecastSearchWebWidget extends StatelessWidget {
   final void Function()? onPressed;
@@ -13,27 +14,30 @@ class ActualForecastSearchWebWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
-          child: Column(
-            children: [
-              CustomInputTextField(
-                onChanged: onChanged,
-              ),
-              const SizedBox(
-                height: 40.0,
-              ),
-              CustomElevatedButton(
-                onPressed: onPressed,
-                label: 'Buscar',
-              ),
-            ],
-          ),
+    final mediaQueryData = MediaQuery.of(context);
+    return Align(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 500),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                CustomInputTextField(
+                  onChanged: onChanged,
+                ),
+                SizedBox(
+                  height: Responsivity.automatic(40, mediaQueryData),
+                ),
+                CustomElevatedButton(
+                  onPressed: onPressed,
+                  label: 'Buscar',
+                ),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

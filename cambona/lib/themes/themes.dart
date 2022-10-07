@@ -29,13 +29,13 @@ final lightTheme = ThemeData(
   //TEXTOS
   textTheme: const TextTheme(
     displayLarge: TextStyle(
-      fontSize: 180,
+      fontSize: 150,
       fontWeight: FontWeight.bold,
       fontFamily: 'Montserrat',
       color: Colors.black,
     ),
     displayMedium: TextStyle(
-      fontSize: 100,
+      fontSize: 80,
       fontWeight: FontWeight.bold,
       fontFamily: 'Montserrat',
       color: Colors.black,
@@ -68,7 +68,7 @@ final lightTheme = ThemeData(
       fontFamily: 'ROBOTO',
       fontSize: 15,
       fontWeight: FontWeight.bold,
-      color: Colors.black,
+      color: Colors.white,
     ),
   ),
 

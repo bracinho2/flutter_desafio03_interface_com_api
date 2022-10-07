@@ -25,7 +25,12 @@ Como funciona? Sempre que dispararmos um evento nós teremos a atualização do 
 
 Dica importante: atente-se para os métodos dentro da classe principal do Bloc: são eles que irão receber um evento e emitir um estado!
 
-## Responsividade
+## Responsividade & Adaptatividade
+Para termos aplicativos que respondam aos nossos anseios e sonhos devemos ter claras as noções de Responsividade e Adaptatividade. Afinal de contas, o que elas são e o que cada uma delas faz?
+
+Responsividade: com este conceito alcançamos um objetivo bastante simples, porém, importantíssimo em nossas aplicações: com ele conseguimos tornar as telas de nossos aplicativos flexíveis, ou seja, elas conseguem se adaptar conforme o tamanho da tela de cada dispositivo, obviamente, dentro de uma classe específica, como por exemplo, a classe celular;
+
+Adaptatividade: com este conceito nós alcançamos um outro objetivo que está em sintonia com a utilização do próprio Flutter, que é a capacidade de aproveitarmos o mesmo código para apresentarmos nossas aplicações em diferentes dispositivos, como um dispositivo WEB ou Mobile. Aqui a ideia é a seguinte: dar condições para que nossa aplicação tome a decisão de qual elemento será mostrado em tela de acordo com alguma regra. Obviamente, por escolha nossa, utilizaremos o recurso do MediaQuery do Flutter para coletar o tamanho da tela do dispositivo em questão para subsidiar a decisão de qual Widget será exibido. Logo, poderemos mostrar nosso Widget de celular em celular e o Widget de web na web. Parece simples, no entanto, precisamos ter uma estratégia bem definida para darmos a melhor experiência possível para nosso usuário.
 
 ## Arquitetura Limpa
 O desafio solicitou construir uma pequena arquitetura com Repositorio(Repository) e Fonte de Dados (Datasource). No entanto, como nosso estudo prévio foi baseado na proposta de Arquitetura Limpa da Flutternado optamos em desenvolver este projeto com estas noções mais aproximadas para favorecer os testes das camadas, que deverão ser realizados.
@@ -40,19 +45,12 @@ Para o consumo de API necessitamos de um cliente HTTP. Podemos utilizar algumas 
 Outra dica importante é que um pacote deve ficar encapsulado e o retorno de dados deve ser um retorno de tipos conhecidos pelo programa, ou seja, o pacote com o cliente http fica encapsulado. Uma dica é pensar em uma estratégia de organizar uma interface (classe abstrata) que contenha a regra de negócio para consulta e, depois, realizar a implementação do pacote escolhido (neste desafio utilizaremos o Uno). Vale ressaltar que a ideia é que o cliente http passe para o datasource do projeto a resposta que ele conseguir da api. Atente-se para o retorno que pode ser um JSON, uma lista, um mapa, etc;
 
 
-Requisitos:
-Mobile e Desktop/Web
-Design a sua escolha - Responsividade, Adaptatividade, Design system(monorepo, usar o melos)
-Modular
-Repository com datasource(interfaces)
-Teste de unidade das camadas e do bloc
-BLoC
-Uno(Wrapper igual do ImagePicker)
+## Teste de Unidade das Camadas e do Bloc
+Extensões do vsCode: flutter_coverage, coverage_gutters
+Package: full_coverage
 
-Git/GitHub - (Conventional commits e Git Flow) 
-Browse thousands of Weather images for design inspiration | Dribbble
-Explore thousands of high-quality weather images on Dribbble. Your resource to get inspired, discover and connect with designers worldwide.
+## Git > Convencional Commits versus Git Flow
 https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow
-Atlassian
-Fluxo de trabalho de Gitflow | Atlassian Git Tutorial
-Um mergulho profundo no fluxo de trabalho Gitflow. Aprenda se este fluxo de trabalho Git é o certo para você e sua equipe com este tutorial abrangente.
+
+
+

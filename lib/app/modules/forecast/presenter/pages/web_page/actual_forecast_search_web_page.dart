@@ -61,8 +61,8 @@ class _ActualForecastSearchWebPageState
           if (state is SucessActualForecast) {
             return ActualForecastSucessWebWidget(
               city: Text(
-                searchController.text.toUpperCase(),
-                style: lightTheme.textTheme.titleLarge,
+                state.city!.toUpperCase(),
+                style: lightTheme.textTheme.displayLarge,
               ),
               state: state,
               onPressed: () {

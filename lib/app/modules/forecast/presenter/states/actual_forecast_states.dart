@@ -15,5 +15,7 @@ class ErrorActualForecastState extends IActualForecastState {
 
 class SucessActualForecast extends IActualForecastState {
   final ActualForecast forecast;
-  const SucessActualForecast(this.forecast);
+  final String? city;
+
+  const SucessActualForecast(this.forecast, this.city);
 }
