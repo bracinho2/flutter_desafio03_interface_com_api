@@ -18,7 +18,7 @@ final lightTheme = ThemeData(
   //ELEVATED BUTTOM
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      primary: primaryColor,
+      backgroundColor: primaryColor,
       textStyle: const TextStyle(
         fontFamily: 'Roboto',
         fontSize: 16,
