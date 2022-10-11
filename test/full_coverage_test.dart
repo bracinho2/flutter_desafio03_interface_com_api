@@ -1,6 +1,6 @@
 // ignore_for_file: unused_import
 import 'package:flutter_desafio03_interface_com_api/app/core/core_module.dart';
-import 'package:flutter_desafio03_interface_com_api/app/core/http_service/http_service.dart';
+import 'package:flutter_desafio03_interface_com_api/app/core/http_service/uno_http_service_impl.dart';
 import 'package:flutter_desafio03_interface_com_api/app/core/api/forecast_api_paths.dart';
 import 'package:flutter_desafio03_interface_com_api/app/core/pages/splash_page.dart';
 import 'package:flutter_desafio03_interface_com_api/app/core/screen_inteligency/screen_inteligency.dart';
