@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/states/actual_forecast_states.dart';
 
 class ActualForecastSucessWidget extends StatelessWidget {
-  final SucessActualForecast state;
+  final SucessActualForecastState state;
   final void Function()? onPressed;
   final Widget city;
   const ActualForecastSucessWidget({

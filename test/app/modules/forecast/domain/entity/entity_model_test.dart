@@ -24,15 +24,13 @@ void main() {
       wind: "15 km/h",
       description: "Partly cloudy",
       futureForecast: [
-        FutureForecast("1", "+10 °C", "10 km/h"),
-        FutureForecast("2", "+20 °C", "20 km/h"),
-        FutureForecast("3", "+30 °C", "30 km/h"),
+        FutureForecast(day: "1", temperature: "+10 °C", wind: "10 km/h"),
+        FutureForecast(day: "2", temperature: "+20 °C", wind: "20 km/h"),
+        FutureForecast(day: "3", temperature: "+30 °C", wind: "30 km/h"),
       ]);
 
   //inicia teste;
-  setUpAll(() {
-    print('Inicia o teste');
-  });
+  setUpAll(() {});
 
   group('Teste de Entidade', () {
     test('combo de testes > se é uma previsao e se não é nula', () {
@@ -46,7 +44,5 @@ void main() {
   });
 
   //finaliza teste;
-  tearDownAll(() {
-    print('Finaliza o teste');
-  });
+  tearDownAll(() {});
 }

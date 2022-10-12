@@ -58,7 +58,7 @@ class _ActualForecastSearchWebPageState
               },
             );
           }
-          if (state is SucessActualForecast) {
+          if (state is SucessActualForecastState) {
             return ActualForecastSucessWebWidget(
               city: Text(
                 state.city!.toUpperCase(),

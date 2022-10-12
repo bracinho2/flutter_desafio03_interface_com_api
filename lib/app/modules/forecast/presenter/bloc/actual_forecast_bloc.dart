@@ -30,7 +30,7 @@ class ActualForecastBloc
       final actualForecast = await _getForecast.call(
         value: event.city,
       );
-      emit(SucessActualForecast(actualForecast, event.city));
+      emit(SucessActualForecastState(actualForecast, event.city));
     } catch (e) {
       emit(ErrorActualForecastState(e.toString()));
     }

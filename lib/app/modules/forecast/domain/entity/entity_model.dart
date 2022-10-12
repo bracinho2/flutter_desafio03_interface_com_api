@@ -22,11 +22,11 @@ class FutureForecast {
   final String temperature;
   final String wind;
 
-  FutureForecast(
-    this.day,
-    this.temperature,
-    this.wind,
-  );
+  FutureForecast({
+    required this.day,
+    required this.temperature,
+    required this.wind,
+  });
 
   @override
   String toString() {

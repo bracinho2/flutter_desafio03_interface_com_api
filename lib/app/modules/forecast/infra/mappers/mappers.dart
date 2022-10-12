@@ -31,9 +31,9 @@ class FutureForecastMapper extends FutureForecast {
     required String temperature,
     required String wind,
   }) : super(
-          day,
-          temperature,
-          wind,
+          day: day,
+          temperature: temperature,
+          wind: wind,
         );
 
   factory FutureForecastMapper.fromMap(Map<String, dynamic> map) {
