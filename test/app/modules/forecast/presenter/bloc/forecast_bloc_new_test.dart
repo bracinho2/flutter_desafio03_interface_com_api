@@ -1,7 +1,6 @@
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entity/entity_model.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/usecases/get_forecast.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/actual_forecast_bloc.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/forecast_bloc_new.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:peabiru/peabiru.dart';
 
@@ -25,28 +24,19 @@ void main() {
 
   setUp(() {
     usecase = GetForecastMock();
-    bloc = ActualForecastBloc(usecase);
+    bloc = ForecastBloc(usecase);
   });
 
-  test('should not return a bloc null', () {
+  test('description', () {
     when((() => usecase.call(value: city)))
         .thenAnswer((_) async => forecastTest);
 
-    bloc.add(FetchActualForecastEvent(city: city));
-    expect(bloc, isNotNull);
-  });
-
-  test('should return an bloc instance', () {
-    when((() => usecase.call(value: city)))
-        .thenAnswer((_) async => forecastTest);
-
-    bloc.add(FetchActualForecastEvent(city: city));
+    bloc.add(ForecastEventFetch(city: city));
     print(bloc.state);
-    expect(bloc, equals(bloc));
   });
 
   tearDown(() {
-    bloc;
     usecase;
+    bloc;
   });
 }

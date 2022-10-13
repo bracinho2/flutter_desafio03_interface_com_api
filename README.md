@@ -46,6 +46,18 @@ Outra dica importante é que um pacote deve ficar encapsulado e o retorno de dad
 
 
 ## Teste de Unidade das Camadas e do Bloc
+
+    - Testes de Unidade;
+    Num primeiro momento o teste de unidade é um pouco complexo para o programador iniciante. Embora conceitualmente falando este teste seja fácil de realizar a nomenclatura e as ferramentas para colocar em prática um primeiro teste não é fácil. Sabemos que no Dart/Flutter. Posso dar algumas dicas interessantes que lhe auxiliarão no estudo dos testes. NO meu caso específico consegui realizar os testes após algum tempo por conta de que construi este aplicativo com vistas na filosofia da Arquitetura Limpa com o uso forte dos Conceitos do SOLID mais o conceito de Injeção de Dependências.
+        - Dica 01: Utilize a suite de teste nativa do Flutter e utilize os métodos setUp e tearDown para iniciar e finalizar o teste respectivamente;
+        - Dica 02: Dentro do método test(){} utilize algum pacote para testes; no meu caso estou de mocktail. A sacada importante para utilização é aprender fazer o mock da dependência da classe à qual você deseja testar.
+        - Dica 03: No método when() lembre-se da ideia de que você deve fazer este método responder com o conteúdo da classe mockada, ou seja, este método literalmente fará um fake da chamada para que você não necessite depender de outras classes no teste de unidade;
+        - Dica 04: Atente-se para o método Expect() no qual você deverá ter um dado e deverá ter um "matcher" ou seja, um dado que será comparado com outro cumprindo a condição do teste;
+
+    - Teste de Bloc;
+    Para tester o Bloc vale a leitura do item anterior. No caso do bloc existem algumas particularidades com as quais deve-se ter máxima atenção para tornar o teste mais fácil.
+
+
 Extensões do vsCode: flutter_coverage, coverage_gutters
 Package: full_coverage
 
