@@ -3,7 +3,7 @@ import 'package:cambona/themes/themes.dart';
 import 'package:cambona/widgets/custom_elevated_button.dart';
 import 'package:cambona/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/states/actual_forecast_states.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/states/actual_forecast_states.dart';
 
 class ActualForecastSucessWebWidget extends StatelessWidget {
   final SucessActualForecastState state;

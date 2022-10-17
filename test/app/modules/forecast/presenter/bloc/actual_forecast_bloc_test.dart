@@ -1,7 +1,8 @@
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entity/entity_model.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entities/actual_forecast_entity.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entities/future_forecast_entity.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/usecases/get_forecast.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/actual_forecast_bloc.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/events/actual_forecast_events.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:peabiru/peabiru.dart';
 

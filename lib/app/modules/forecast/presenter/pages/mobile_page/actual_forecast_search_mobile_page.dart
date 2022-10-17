@@ -1,13 +1,13 @@
 import 'package:cambona/cambona.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/actual_forecast_bloc.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/events/actual_forecast_events.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/mobile_page/widgets/actual_forecast_error_widget.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/mobile_page/widgets/actual_forecast_loading_widget.dart';
 
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/mobile_page/widgets/actual_forecast_search_widget.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/pages/mobile_page/widgets/actual_forecast_sucess_widget.dart';
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/states/actual_forecast_states.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/states/actual_forecast_states.dart';
 import 'package:peabiru/peabiru.dart';
 
 class ActualForecastSearchMobilePage extends StatefulWidget {

@@ -52,23 +52,19 @@ class Adaptative extends StatelessWidget {
     required this.desktop,
   }) : super(key: key);
 
-  static bool isMobile(BuildContext context) =>
-      MediaQuery.of(context).size.width < 850;
+  bool _isMobile(Size size) => size.width < 850;
 
-  static bool isTablet(BuildContext context) =>
-      MediaQuery.of(context).size.width < 1100 &&
-      MediaQuery.of(context).size.width >= 850;
+  bool _isTablet(Size size) => size.width < 1100 && size.width >= 850;
 
-  static bool isDesktop(BuildContext context) =>
-      MediaQuery.of(context).size.width >= 1100;
+  bool _isDesktop(Size size) => size.width >= 1100;
 
   @override
   Widget build(BuildContext context) {
     final mediaQueryData = MediaQuery.of(context);
 
-    if (mediaQueryData.size.width >= 1100) {
+    if (_isDesktop(mediaQueryData.size)) {
       return desktop;
-    } else if (mediaQueryData.size.width >= 850 && tablet != null) {
+    } else if (_isTablet(mediaQueryData.size) && tablet != null) {
       return tablet!;
     } else {
       return mobile;

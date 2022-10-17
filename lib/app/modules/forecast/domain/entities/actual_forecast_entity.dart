@@ -1,3 +1,5 @@
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entities/future_forecast_entity.dart';
+
 class ActualForecast {
   final String temperature;
   final String wind;
@@ -14,22 +16,5 @@ class ActualForecast {
   @override
   String toString() {
     return 'Actual Forecast: Temperature: $temperature | Wind: $wind | Description: $description';
-  }
-}
-
-class FutureForecast {
-  final String day;
-  final String temperature;
-  final String wind;
-
-  FutureForecast({
-    required this.day,
-    required this.temperature,
-    required this.wind,
-  });
-
-  @override
-  String toString() {
-    return 'Future Forecast: Day: $day | Temperature: $temperature | Wind: $wind \n';
   }
 }

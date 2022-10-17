@@ -45,7 +45,7 @@ void main() {
       () => forecastDatasource.call(value: city),
     ).thenAnswer((_) async => dummyData);
 
-    final response = await forecastDatasource.call(value: city);
+    final response = await forecastRepository.call(value: city);
     expect(response, isNotNull);
   });
 
@@ -54,7 +54,7 @@ void main() {
       () => forecastDatasource.call(value: city),
     ).thenAnswer((_) async => dummyData);
 
-    final response = await forecastDatasource.call(value: city);
+    final response = await forecastRepository.call(value: city);
     expect(response, dummyData);
   });
 
@@ -63,8 +63,8 @@ void main() {
       () => forecastDatasource.call(value: city),
     ).thenAnswer((_) async => dummyData);
 
-    final response = await forecastDatasource.call(value: city);
-    expect(response['temperature'], '+23 °C');
+    final response = await forecastRepository.call(value: city);
+    expect(response.temperature, '+23 °C');
   });
 
   tearDown(() {

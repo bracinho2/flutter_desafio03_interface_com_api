@@ -1,19 +1,10 @@
-import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entity/entity_model.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/entities/actual_forecast_entity.dart';
 
-class ActualForecastMapper extends ActualForecast {
-  ActualForecastMapper({
-    required String temperature,
-    required String wind,
-    required String description,
-    required List<FutureForecast> futureForecast,
-  }) : super(
-            temperature: temperature,
-            wind: wind,
-            description: description,
-            futureForecast: futureForecast);
+import '../../domain/entities/future_forecast_entity.dart';
 
-  factory ActualForecastMapper.fromMap(Map<String, dynamic> map) {
-    return ActualForecastMapper(
+class ActualForecastMapper {
+  static fromMap(Map<String, dynamic> map) {
+    return ActualForecast(
       temperature: map['temperature'],
       wind: map['wind'],
       description: map['description'],
@@ -25,19 +16,9 @@ class ActualForecastMapper extends ActualForecast {
   }
 }
 
-class FutureForecastMapper extends FutureForecast {
-  FutureForecastMapper({
-    required String day,
-    required String temperature,
-    required String wind,
-  }) : super(
-          day: day,
-          temperature: temperature,
-          wind: wind,
-        );
-
-  factory FutureForecastMapper.fromMap(Map<String, dynamic> map) {
-    return FutureForecastMapper(
+class FutureForecastMapper {
+  static fromMap(Map<String, dynamic> map) {
+    return FutureForecast(
       day: map['day'],
       temperature: map['temperature'],
       wind: map['wind'],
