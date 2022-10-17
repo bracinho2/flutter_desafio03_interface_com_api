@@ -1,5 +1,15 @@
-abstract class Failure implements Exception {
-  String get message;
+import 'package:flutter_desafio03_interface_com_api/app/core/errors/errors_interface.dart';
+
+class UsecaseError extends Failure {
+  @override
+  final String message;
+  UsecaseError({
+    required this.message,
+  });
+  @override
+  String toString() {
+    return 'ConnectionError $message';
+  }
 }
 
 class ConnectionError extends Failure {
