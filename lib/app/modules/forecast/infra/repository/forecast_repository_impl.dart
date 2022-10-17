@@ -8,7 +8,7 @@ import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/infra/m
 class ForecastRepositoryImpl implements ForecastRepository {
   final ForecastDatasource _forecastDatasource;
 
-  ForecastRepositoryImpl(this._forecastDatasource);
+  const ForecastRepositoryImpl(this._forecastDatasource);
   @override
   Future<ActualForecast> call({
     required String value,

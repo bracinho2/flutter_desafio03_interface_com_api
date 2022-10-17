@@ -3,7 +3,7 @@ class FutureForecast {
   final String temperature;
   final String wind;
 
-  FutureForecast({
+  const FutureForecast({
     required this.day,
     required this.temperature,
     required this.wind,

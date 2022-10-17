@@ -10,7 +10,7 @@ abstract class GetForecast {
 class GetForecastImpl implements GetForecast {
   final ForecastRepository _forecastRepository;
 
-  GetForecastImpl(this._forecastRepository);
+  const GetForecastImpl(this._forecastRepository);
   @override
   Future<ActualForecast> call({
     required String value,

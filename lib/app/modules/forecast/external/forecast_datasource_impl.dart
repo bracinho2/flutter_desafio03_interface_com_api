@@ -6,7 +6,7 @@ import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/infra/d
 class ForecastDatasourceImpl implements ForecastDatasource {
   final HttpClient _httpClient;
 
-  ForecastDatasourceImpl(this._httpClient);
+  const ForecastDatasourceImpl(this._httpClient);
   @override
   Future<Map<String, dynamic>> call({
     required String value,

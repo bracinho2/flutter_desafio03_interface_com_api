@@ -6,7 +6,7 @@ class ActualForecast {
   final String description;
   final List<FutureForecast> futureForecast;
 
-  ActualForecast({
+  const ActualForecast({
     required this.temperature,
     required this.wind,
     required this.description,

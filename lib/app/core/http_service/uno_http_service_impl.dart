@@ -5,7 +5,7 @@ import 'package:peabiru/peabiru.dart';
 class UnoForecastImplementation implements HttpClient {
   final Uno _uno;
 
-  UnoForecastImplementation(this._uno);
+  const UnoForecastImplementation(this._uno);
 
   @override
   Future<Map<String, dynamic>> fetch({required String path}) async {

@@ -14,7 +14,7 @@ void main() {
 
   const city = 'toledo';
 
-  final forecastTest = ActualForecast(
+  const forecastTest = ActualForecast(
       temperature: "+23 °C",
       wind: "15 km/h",
       description: "Partly cloudy",

@@ -20,7 +20,7 @@ import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  ActualForecast _forecast = ActualForecast(
+  ActualForecast _forecast = const ActualForecast(
       temperature: "+23 °C",
       wind: "15 km/h",
       description: "Partly cloudy",
