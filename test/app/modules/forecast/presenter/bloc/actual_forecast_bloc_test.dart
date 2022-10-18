@@ -3,6 +3,7 @@ import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/domain/usecases/get_forecast.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/actual_forecast_bloc.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/events/actual_forecast_events.dart';
+import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/presenter/bloc/states/actual_forecast_states.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:peabiru/peabiru.dart';
 
@@ -10,7 +11,7 @@ class GetForecastMock extends Mock implements GetForecast {}
 
 void main() {
   late GetForecast usecase;
-  late Bloc bloc;
+  late ActualForecastBloc bloc;
 
   const city = 'toledo';
 
@@ -37,14 +38,32 @@ void main() {
     expect(bloc, isNotNull);
   });
 
-  test('should return an bloc instance', () {
+  test('should return an bloc instance', () async {
     when((() => usecase.call(value: city)))
         .thenAnswer((_) async => forecastTest);
 
     bloc.add(FetchActualForecastEvent(city: city));
-    print(bloc.state);
-    expect(bloc, equals(bloc));
+
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    await expectLater(
+        (bloc.state as SucessActualForecastState).city, equals(city));
   });
+
+  blocTest<ActualForecastBloc, IActualForecastState>(
+    'teste do BLOC',
+    build: () {
+      when((() => usecase.call(value: city)))
+          .thenAnswer((_) async => forecastTest);
+
+      return ActualForecastBloc(usecase);
+    },
+    act: (bloc) => bloc.add(FetchActualForecastEvent(city: city)),
+    expect: () => [
+      isA<LoadingActualForecastState>(),
+      isA<SucessActualForecastState>(),
+    ],
+  );
 
   tearDown(() {
     bloc;

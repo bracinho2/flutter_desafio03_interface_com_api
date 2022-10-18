@@ -1,40 +1,34 @@
+import 'package:flutter_desafio03_interface_com_api/app/core/api/forecast_api_paths.dart';
 import 'package:flutter_desafio03_interface_com_api/app/core/http_service/uno_http_service_impl.dart';
 import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/external/forecast_datasource_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:peabiru/peabiru.dart';
 
-class UnoMock extends Mock implements Uno {}
+class HttpClientMock extends Mock implements UnoForecastImplementation {}
 
 void main() {
-  late UnoMock unoMock;
+  late HttpClientMock httpClientMock;
+
   late ForecastDatasourceImpl forecastDatasourceImpl;
 
   setUp(() {
-    unoMock = UnoMock();
-    forecastDatasourceImpl =
-        ForecastDatasourceImpl(UnoForecastImplementation(unoMock));
+    httpClientMock = HttpClientMock();
+    forecastDatasourceImpl = ForecastDatasourceImpl(httpClientMock);
   });
-  test('deve retornar uma lista de qualquer coisa', () async {
-    when(() => unoMock.get(any())).thenAnswer(
-      (_) async => Response(
-        data: dummyData,
-        headers: {},
-        request: Request(
-          headers: {},
-          method: '',
-          timeout: const Duration(seconds: 2),
-          uri: Uri(),
-        ),
-        status: 200,
-      ),
-    );
 
-    var forecast = await forecastDatasourceImpl.call(value: 'value');
+  const city = 'Toledo';
+  test('deve retornar um mapa de qualquer coisa', () async {
+    when(
+      () => httpClientMock.fetch(path: '${URLs.FORECAST_BASE_URL}$city'),
+    ).thenAnswer((_) async => dummyData);
+
+    var forecast = await forecastDatasourceImpl.call(value: city);
+    print(forecast);
     expect(forecast['temperature'], '+23 °C');
   });
 
   tearDown(() {
-    unoMock;
+    httpClientMock;
     forecastDatasourceImpl;
   });
 }

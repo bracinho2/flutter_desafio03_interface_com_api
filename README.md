@@ -54,6 +54,8 @@ Outra dica importante é que um pacote deve ficar encapsulado e o retorno de dad
         - Dica 03: No método when() lembre-se da ideia de que você deve fazer este método responder com o conteúdo da classe mockada, ou seja, este método literalmente fará um fake da chamada para que você não necessite depender de outras classes no teste de unidade;
         - Dica 04: Atente-se para o método Expect() no qual você deverá ter um dado e deverá ter um "matcher" ou seja, um dado que será comparado com outro cumprindo a condição do teste;
 
+        comando: "flutter test --coverage";
+
     - Teste de Bloc;
     Para tester o Bloc vale a leitura do item anterior. No caso do bloc existem algumas particularidades com as quais deve-se ter máxima atenção para tornar o teste mais fácil.
 

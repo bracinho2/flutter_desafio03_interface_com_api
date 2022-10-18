@@ -49,15 +49,6 @@ void main() {
     expect(response, isNotNull);
   });
 
-  test('should current map equals dummy data', () async {
-    when(
-      () => forecastDatasource.call(value: city),
-    ).thenAnswer((_) async => dummyData);
-
-    final response = await forecastRepository.call(value: city);
-    expect(response, dummyData);
-  });
-
   test('should current temperature from map equals any', () async {
     when(
       () => forecastDatasource.call(value: city),
