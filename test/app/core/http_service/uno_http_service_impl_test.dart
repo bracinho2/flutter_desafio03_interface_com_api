@@ -6,11 +6,11 @@ class UnoMock extends Mock implements Uno {}
 
 void main() {
   late UnoMock unoMock;
-  late UnoForecastImplementation unoForecastImplementation;
+  late UnoHttpClientImpl unoForecastImplementation;
 
   setUp(() {
     unoMock = UnoMock();
-    unoForecastImplementation = UnoForecastImplementation(unoMock);
+    unoForecastImplementation = UnoHttpClientImpl(unoMock);
   });
   test('Should return any data from API', () async {
     when(() => unoMock.get(any())).thenAnswer(

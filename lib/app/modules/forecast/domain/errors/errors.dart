@@ -1,61 +1,20 @@
 import 'package:flutter_desafio03_interface_com_api/app/core/errors/errors_interface.dart';
 
-class UsecaseError extends Failure {
-  @override
-  final String message;
-  UsecaseError({
-    required this.message,
-  });
-  @override
-  String toString() {
-    return 'ConnectionError $message';
-  }
-}
-
-class ConnectionError extends Failure {
-  @override
-  final String message;
-  ConnectionError({
-    required this.message,
-  });
-  @override
-  String toString() {
-    return 'ConnectionError $message';
-  }
-}
-
+//HTTP CLIENT ERROR
 class HttpClientError extends Failure {
-  @override
-  final String message;
+  final String errorMessage;
+  final dynamic exception;
+  final StackTrace? stackTrace;
+  final String? label;
+
   HttpClientError({
-    required this.message,
-  });
-  @override
-  String toString() {
-    return 'ConnectionError $message';
-  }
-}
-
-class DatasourceError extends Failure {
-  @override
-  final String message;
-  DatasourceError({
-    required this.message,
-  });
-  @override
-  String toString() {
-    return 'DatasourceError $message';
-  }
-}
-
-class RepositoryError extends Failure {
-  @override
-  final String message;
-  RepositoryError({
-    required this.message,
-  });
-  @override
-  String toString() {
-    return 'RepositoryError $message';
-  }
+    this.errorMessage = 'HttpClient Error',
+    this.exception,
+    this.stackTrace,
+    this.label,
+  }) : super(
+          stackTrace: stackTrace,
+          label: label,
+          exception: exception,
+        );
 }

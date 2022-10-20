@@ -4,7 +4,7 @@ import 'package:flutter_desafio03_interface_com_api/app/modules/forecast/externa
 import 'package:flutter_test/flutter_test.dart';
 import 'package:peabiru/peabiru.dart';
 
-class HttpClientMock extends Mock implements UnoForecastImplementation {}
+class HttpClientMock extends Mock implements UnoHttpClientImpl {}
 
 void main() {
   late HttpClientMock httpClientMock;

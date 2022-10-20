@@ -10,7 +10,7 @@ class CoreModule extends Module {
       export: true,
     ),
     Bind.singleton<HttpClient>(
-      (i) => UnoForecastImplementation(i()),
+      (i) => UnoHttpClientImpl(i()),
       export: true,
     ),
   ];
